@@ -3,6 +3,8 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --primary: #4EC0E5;
+  --subtext: #4B5563;
 }
 
 @theme inline {
@@ -10,12 +12,16 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --color-primary: var(--primary);
+  --color-subtext: var(--subtext);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --foreground: #0a0a0a;
+    --background: #F9FBFB;
+    --primary: #4EC0E5;
+    --subtext: #4B5563;
   }
 }
 

@@ -1,14 +1,14 @@
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Poppins } from "next/font/google";
 import "./globals.css";
+import Header from "@/components/layout/header";
+import Sidebar from "@/components/layout/sidebar";
+import { HeaderProvider } from "../context/headerContext";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const poppins = Poppins({
+  weight: ["300", "400", "500", "600", "700"],
+  style: ["normal", "italic"],
   subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+  variable: "--font-poppins",
 });
 
 export const metadata = {
@@ -19,10 +19,16 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
+      <body className={` ${poppins.variable} antialiased flex `}>
+        <HeaderProvider>
+          <div className="flex flex-row w-full ">
+            <Sidebar />
+            <div className="flex flex-col w-full overflow-y-auto">
+              <Header />
+              <div className="flex w-full h-full px-6 py-10 overflow-auto">{children}</div>
+            </div>
+          </div>
+        </HeaderProvider>
       </body>
     </html>
   );
