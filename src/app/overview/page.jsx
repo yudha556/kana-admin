@@ -17,7 +17,7 @@ export default function Overview() {
   }, []);
 
   return (
-    <div className="flex flex-col w-full gap-10">
+    <div className="flex flex-col w-full gap-10 mb-[100px]">
       <div className="flex flex-row gap-8 w-full">
         <BorderCard title="System Uptime" variant="border" color="#8ACEE5">
           <div className="flex flex-col gap-1">

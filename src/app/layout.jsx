@@ -19,15 +19,20 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={` ${poppins.variable} antialiased flex `}>
+      <body className={`${poppins.variable} antialiased`}>
         <HeaderProvider>
-          <div className="flex flex-row w-full ">
+          
+          <div className="fixed left-0 top-0 h-screen w-64  bg-white">
             <Sidebar />
-            <div className="flex flex-col w-full overflow-y-auto">
-              <Header />
-              <div className="flex w-full h-full px-6 py-10 overflow-auto">{children}</div>
+          </div>
+
+          <div className="ml-64 flex flex-col h-screen overflow-hidden ">
+            <Header />
+            <div className="flex-1 px-6 py-10 overflow-y-auto">
+              {children}
             </div>
           </div>
+
         </HeaderProvider>
       </body>
     </html>
