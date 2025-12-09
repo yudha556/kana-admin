@@ -18,7 +18,7 @@ export default function Sidebar() {
   ];
 
   const bottomMenu = [
-    { name: "Logout", icon: LogOut, href: "/auth" }
+    { name: "Logout", icon: LogOut, href: "/auth/login" }
   ]
 
   return (

@@ -1,12 +1,10 @@
-import { Geist, Geist_Mono, Poppins } from "next/font/google";
+import { Poppins } from "next/font/google";
 import "./globals.css";
-import Header from "@/components/layout/header";
-import Sidebar from "@/components/layout/sidebar";
 import { HeaderProvider } from "../context/headerContext";
+import LayoutWrapper from "@/components/layout/layoutWraper";
 
 const poppins = Poppins({
   weight: ["300", "400", "500", "600", "700"],
-  style: ["normal", "italic"],
   subsets: ["latin"],
   variable: "--font-poppins",
 });
@@ -21,18 +19,9 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={`${poppins.variable} antialiased`}>
         <HeaderProvider>
-          
-          <div className="fixed left-0 top-0 h-screen w-64  bg-white">
-            <Sidebar />
-          </div>
-
-          <div className="ml-64 flex flex-col h-screen overflow-hidden ">
-            <Header />
-            <div className="flex-1 px-6 py-10 overflow-y-auto">
-              {children}
-            </div>
-          </div>
-
+          <LayoutWrapper>
+            {children}
+          </LayoutWrapper>
         </HeaderProvider>
       </body>
     </html>
