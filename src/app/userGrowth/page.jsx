@@ -3,12 +3,10 @@
 import { useEffect, useState } from "react";
 import { useHeader } from "@/context/headerContext";
 import {
-  generateDummySeries,
   generateLastDaysLabel,
   generateTwoYearDummy,
   generateLastDaysTable,
 } from "@/utils/generateLastDay";
-import { dummyUsers } from "@/utils/dummyUsers";
 import { BorderCard, Card } from "@/components/ui";
 import {
   Calendar,
@@ -18,7 +16,6 @@ import {
   Users,
   ChevronLeft,
   ChevronRight,
-  BarChartHorizontalBig,
   ChartColumnStacked,
   ChevronDown,
 } from "lucide-react";
